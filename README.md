@@ -38,7 +38,7 @@ GPT_CONFIG_124M = {
     "qkv_bias": False
 }
 ```
-## Example input format 
+## Example Input Format 
 ```csharp
 Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
@@ -51,3 +51,21 @@ Artificial Intelligence is the field of developing machines that can perform tas
 ### Response:
 AI enables machines to perform human-like tasks such as learning, problem-solving, and decision-making.
 ```
+
+### 📦 Installation
+## 1. Clone the repository:
+```bash
+git clone https://github.com/vaishnavisatish/GPT-2-from-Scratch.git
+cd GPT-2-from-Scratch
+```
+## 2. Install dependencies: 
+```bash
+pip install -r requirements.txt
+```
+## 3. (Optional) If using GPU:
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+```
+
+
+
