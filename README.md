@@ -1,13 +1,53 @@
-# GPT-2-from-Scratch-with-Instruction-Tuning
-Built a GPT-2 language model entirely from scratch using PyTorch and pretrained weights. All core components including multi-head self-attention, transformer blocks, and layer normalization were implemented manually. The model was fine-tuned using instruction-based data (Alpaca dataset) and evaluated using Ollama with a score of 80.
-## 🔧 Key Features
-Manual implementation of:
+# 🧠 GPT-2 from Scratch with Instruction Fine-Tuning
 
-Multi-head Attention
-Transformer Blocks
-GELU Activation and LayerNorm
-Positional and Token Embeddings
-Uses OpenAI's tiktoken for GPT-2 tokenization
-Instruction fine-tuning using Alpaca-style prompts
-Full training and evaluation pipeline
-Achieved a score of 80 on Ollama
+This project implements a GPT-2 language model entirely **from scratch** using PyTorch and pretrained weights. It includes the manual construction of all core components like multi-head attention, transformer blocks, GELU activation, and layer normalization. The model is fine-tuned on instruction-response pairs inspired by the [Alpaca dataset](https://github.com/tatsu-lab/stanford_alpaca) and evaluated using [Ollama](https://ollama.com/), achieving an evaluation score of **80**.
+
+---
+
+## ✨ Features
+
+- ✅ Manual implementation of GPT-2 architecture in PyTorch
+- ✅ Custom tokenizer using OpenAI’s `tiktoken`
+- ✅ Instruction-based fine-tuning using Alpaca-style prompts
+- ✅ Configurable model sizes (small, medium, large, xl)
+- ✅ Training, validation, and evaluation pipeline
+- ✅ Generates coherent text using greedy decoding
+
+---
+
+## 🛠️ Model Architecture
+
+The model was built using the following components:
+
+- Multi-head Self-Attention
+- Transformer Blocks with Residual Connections
+- GELU Activation
+- Layer Normalization
+- Positional and Token Embeddings
+
+### 🔧 Sample Configuration (GPT-2 Small)
+
+```python
+GPT_CONFIG_124M = {
+    "vocab_size": 50257,
+    "context_length": 256,
+    "emb_dim": 768,
+    "n_heads": 12,
+    "n_layers": 12,
+    "drop_rate": 0.1,
+    "qkv_bias": False
+}
+```
+## Example input format 
+```csharp
+Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Summarize the following paragraph.
+
+### Input:
+Artificial Intelligence is the field of developing machines that can perform tasks that typically require human intelligence...
+
+### Response:
+AI enables machines to perform human-like tasks such as learning, problem-solving, and decision-making.
+```
